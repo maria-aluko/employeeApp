@@ -1,4 +1,4 @@
-.cardStyle {
+.card {
   color: darkblue;
   background-color: #eee;
   padding: 1rem;
@@ -8,4 +8,16 @@
   line-height: 1rem;
   margin: 20px;
   text-align: center;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: darkblue;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(67, 67, 191);
 }
