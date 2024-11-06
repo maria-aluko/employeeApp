@@ -15,10 +15,12 @@ const EmployeeCard = (props) => {
   return (
       <div className="card">
           <p>Name: {props.name}</p>
-          <p>Role: {role}</p>
+          <p>Role: {props.role}</p>
           <p>Department: {props.department}</p>
-          <p>Salary: {props.salary}</p>
           <p>Start Date: {props.startDate}</p>
+          <p>Location: {props.location}</p>
+          <p>Age: {props.age}</p>
+          <p>Animal: {props.animal}</p>
           <button onClick={clickHandler}>Promote</button>
       </div>
   );
