@@ -5,10 +5,10 @@ const EmployeeCard = (props) => {
   const [role, setRole] = useState(props.initRole);
 
   const clickHandler = () => {
-      if (role === "Team Lead") {
+      if (role === "Team Leader") {
           setRole(props.initRole);
       } else {
-          setRole("Team Lead");
+          setRole("Team Leader");
       }
   };
 
@@ -17,6 +17,8 @@ const EmployeeCard = (props) => {
           <p>Name: {props.name}</p>
           <p>Role: {role}</p>
           <p>Department: {props.department}</p>
+          <p>Salary: {props.salary}</p>
+          <p>Start Date: {props.startDate}</p>
           <button onClick={clickHandler}>Promote</button>
       </div>
   );
