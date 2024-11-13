@@ -3,6 +3,7 @@ import EmployeeList from './components/EmployeeList/EmployeeList';
 import Footer from './components/Footer/footer'
 import Header from './components/Header/header'
 import { useState } from 'react'
+import Button from './components/Button/Button';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -17,13 +18,13 @@ function App() {
           {
             isLoggedIn? (
               <div>
-              <button onClick={logInFunction} className='logoutBtn'>Log Out </button>
+              <Button onClick={logInFunction} className='logoutBtn' text='Log Out' />
               <EmployeeList/>
               </div>
             ) : (
               <div>
                 <p>Please log in to see the list</p>
-                <button onClick={logInFunction} className='loginBtn'>Log In</button>
+                <Button onClick={logInFunction} className='loginBtn' text='Log In' />
               </div>
             )
           }

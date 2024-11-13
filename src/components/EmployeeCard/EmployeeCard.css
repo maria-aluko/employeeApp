@@ -24,7 +24,7 @@ img {
   padding-left: 20px;
 }
 
-.teacherName {
+.empName {
   font-size: 1.5rem;
 }
 
@@ -35,6 +35,7 @@ img {
 .promo {
   font-size: 0.7rem;
   font-style: italic;
+  font-weight: 100;
 }
 
 .subtle {
@@ -52,4 +53,8 @@ button {
 
 button:hover {
   background-color: #ce5d00;
+}
+
+button.secondary {
+  background-color: #162C42;
 }
