@@ -17,13 +17,13 @@ function App() {
           {
             isLoggedIn? (
               <div>
-              <button onClick={logInFunction}>Log Out </button>
+              <button onClick={logInFunction} className='logoutBtn'>Log Out </button>
               <EmployeeList/>
               </div>
             ) : (
               <div>
                 <p>Please log in to see the list</p>
-                <button onClick={logInFunction}>Log In</button>
+                <button onClick={logInFunction} className='loginBtn'>Log In</button>
               </div>
             )
           }

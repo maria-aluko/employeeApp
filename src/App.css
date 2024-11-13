@@ -4,3 +4,11 @@
   padding: 2rem;
   text-align: center;
 }
+
+.loginBtn {
+  margin-top: 30px;
+}
+
+.logoutBtn {
+  margin-bottom: 20px;
+}
