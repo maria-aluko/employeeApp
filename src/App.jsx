@@ -8,8 +8,9 @@ import Button from './components/Button/Button';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const logInFunction = () => {
-    setIsLoggedIn(!isLoggedIn);
+    setIsLoggedIn((prevState) => !prevState);
   };
+  
   return (
     <>
       <div>
