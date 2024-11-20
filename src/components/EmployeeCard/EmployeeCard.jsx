@@ -1,4 +1,4 @@
-import { calcYearsWorked } from '../../others/calcYearsWorked';
+import { calcYearsWorked } from '../../utilities/calcYearsWorked';
 import Button from '../Button/Button';
 import Form from '../Form/form';
 import './EmployeeCard.css';

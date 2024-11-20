@@ -4,7 +4,7 @@
   padding: 1rem;
   box-shadow: 0 0 5px #333;
   font-size: 1rem;
-  width: 500px;
+  width: 400px;
   line-height: 1rem;
   margin: 20px;
   text-align: center;
@@ -14,7 +14,7 @@
 }
 
 img {
-  height: 200px;
+  height: 100px;
   flex: 1;
 }
 

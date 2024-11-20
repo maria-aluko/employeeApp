@@ -1,7 +1,8 @@
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/appRoutes';
 import './App.css';
-import EmployeeList from './components/EmployeeList/EmployeeList';
 import Footer from './components/Footer/footer'
-import Header from './components/Header/header'
+import Header from './components/Header/Header'
 import { useState } from 'react'
 import Button from './components/Button/Button';
 
@@ -13,14 +14,19 @@ function App() {
   
   return (
     <>
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+        />
+
       <div>
-        <Header/>
         <main>
           {
             isLoggedIn? (
               <div>
               <Button onClick={logInFunction} className='logoutBtn' text='Log Out' />
-              <EmployeeList/>
               </div>
             ) : (
               <div>
