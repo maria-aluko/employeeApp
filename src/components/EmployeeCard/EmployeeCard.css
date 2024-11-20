@@ -1,21 +1,21 @@
 .card {
   color: #162C42;
   background-color: #eee;
-  padding: 1rem;
+  padding: 10px;
   box-shadow: 0 0 5px #333;
   font-size: 1rem;
   width: 400px;
-  line-height: 1rem;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
   border-radius: 5px;
   display: flex;
-  line-height: 0.6rem;
+  line-height: 0.4rem;
 }
 
 img {
   height: 100px;
   flex: 1;
+  padding: 1rem;
 }
 
 .content {
@@ -44,17 +44,23 @@ img {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
   background-color: #F7770F;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 button:hover {
   background-color: #ce5d00;
 }
 
-button.secondary {
-  background-color: #162C42;
+input {
+  height: 15px;
+  margin-top: 10px;
+  width: 40px;
+}
+
+.smallTxt {
+  font-size: 0.7rem;
 }

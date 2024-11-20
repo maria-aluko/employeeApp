@@ -4,12 +4,12 @@ import './Header.css'
 function Header() {
   return (
     <header>
-      <h1>Employee Dashboard</h1>
       <nav>
+      <h1>Employee Dashboard</h1>
         <ul>          
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/employees'>List</NavLink></li>
-          <li><NavLink to='/new'>Form</NavLink></li>
+          <li><NavLink to='/login'>Log In</NavLink></li>
+          <li><NavLink to='/employees'>Employees</NavLink></li>
+          <li><NavLink to='/new'>Add New</NavLink></li>
         </ul>
       </nav>
 

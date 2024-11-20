@@ -1,6 +1,5 @@
 import { calcYearsWorked } from '../../utilities/calcYearsWorked';
 import Button from '../Button/Button';
-import Form from '../Form/form';
 import './EmployeeCard.css';
 import { useState } from "react";
 
@@ -9,52 +8,58 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
   const [promoRole, setPromoRole] = useState(false);
   const [edit, setEdit] = useState(false);
   const [details, setDetails] = useState({department, location, role})
-  const [toggleFormEdit, setToggleFormEdit] = useState(false);
 
   const yearsWorked = calcYearsWorked(startDate);
   const probation = yearsWorked < 0.5;
   const anniversary = yearsWorked > 0 && yearsWorked % 5 === 0;
 
-  const handleChange = (e) => setDetails(e.target.value);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDetails((prevState) => ({...prevState, [name]: value}));
+  };
 
   return (
     <>
-      <div className="card">
-        <div><img src={`https://robohash.org/${id}?set=set5`} alt="Employee Picture" />
-        </div>
-        
+      <div className="card">  
         <div className="content">
           <p className="empName">
             {name} {promoRole && <span>⭐</span>}
           </p>
-          <p>{role} 
+          <div>{role} 
             {promoRole && <span> - Team Lead</span>}
-          </p>
+          </div>
           
           <div className='subtle'>
             {edit ? (
-              <input type='text' value={department} onChange={handleChange} />
+              <input name='department' type='text' value={details.department} onChange={handleChange} />
             ) : (
-              <p>Department: {department}</p>
+              <p>Department: {details.department}</p>
             )}
+
+            <div>
+              {edit ? (
+                <input name='location' type='text' value={details.location} onChange={handleChange} />
+              ) : (
+                <p>Based in: {details.location}</p>
+              )} 
+            </div>
             
+            <div className='smallTxt'>
             <p>Been here for
                 {yearsWorked < 1 && <span> few months</span>}
                 {yearsWorked > 1 && <span> {yearsWorked} years</span>}
             </p>
-            <p>Based in: {location}</p>
             <p>Animal: {animal}</p>
+            </div>
           </div>
           
           <Button 
             onClick={() => setPromoRole((prevState) => !prevState)}
             text={promoRole ? "Demote" : "Promote"}
-            role={promoRole ? "secondary" : "primary"}
           />
           <Button
             onClick={() => setEdit((prevState) => !prevState)}
             text={edit ? "Save" : "Edit"}
-            role='secondary'
           />
           <div>
             {probation && (
@@ -70,14 +75,12 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
             </p>
             )}
           </div>
-          <Button onClick={() => setToggleFormEdit(!toggleFormEdit)} text={toggleFormEdit ? "Save" : "Edit"}/>
-            {toggleFormEdit && (
-               <Form 
-               role={role}
-               department={department}
-               location={location}
-             />
-            )}
+        </div>
+        <div>
+          <img 
+            src={`https://robohash.org/${id}?set=set5`}
+            alt="Employee Picture" 
+          />
         </div>
       </div>
     </>
