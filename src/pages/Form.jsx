@@ -1,10 +1,20 @@
 import { useState } from "react";
-import './Form.css'
+import employees from "../components/EmployeesData/EmployeesData";
+import './Form.css';
 
 const Form = ({id, name, role, department, startDate, location, age, animal}) => {
 
+  const generateId = () => {
+    let id;
+    const usedId = employees.map(employee => employee.id);
+    do {
+      id = Math.floor(Math.random() * 100);
+    } while (usedId.includes(id));
+    return id;
+  };
+
   const [formData, setFormData] = useState({
-    id,
+    id: generateId(),
     name,
     role,
     department,
@@ -19,17 +29,22 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
     setFormData((prevState) => ({...prevState, [name]: value}));
   };
 
-  console.log(formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+  };
 
   return (
     <div>
       <h2>Add a New Employee</h2>
-      <form>
+      <form
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="name">Full Name: </label>
         <input
           name="name"
           value={formData.name}
-          onChange={handleChange}
           type="text"
           placeholder="John Doe"
         />
@@ -37,7 +52,6 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         <input
           name="role"
           value={formData.role}
-          onChange={handleChange}
           type="text"
           placeholder="Web Designer"
         />
@@ -45,7 +59,6 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         <input
           name="department"
           value={formData.department}
-          onChange={handleChange}
           type="text"
           placeholder="ICT"
         />
@@ -53,14 +66,12 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         <input
           name="startDate"
           value={formData.startDate}
-          onChange={handleChange}
           type="date"
         />
         <label htmlFor="location">Based in: </label>
         <input
           name="location"
           value={formData.location}
-          onChange={handleChange}
           type="text"
           placeholder="Helsinki"
         />
@@ -68,7 +79,6 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         <input
           name="age"
           value={formData.age}
-          onChange={handleChange}
           type="number"
           placeholder="33"
         />
@@ -76,7 +86,6 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
          <input
           name="animal"
           value={formData.animal}
-          onChange={handleChange}
           type="text"
           placeholder="Dog"
         />

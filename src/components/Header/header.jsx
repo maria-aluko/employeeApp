@@ -9,7 +9,7 @@ function Header() {
           <h1>Employee Dashboard</h1>
         </Link>
         <ul>          
-          <li><NavLink to='/login'>Log In</NavLink></li>
+          <li><NavLink to='/'>Log In</NavLink></li>
           <li><NavLink to='/employees'>Employees</NavLink></li>
           <li><NavLink to='/new'>Add New</NavLink></li>
         </ul>
