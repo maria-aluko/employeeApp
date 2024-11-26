@@ -19,13 +19,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
     setFormData((prevState) => ({...prevState, [name]: value}));
   };
 
-  /*
-  const submitData = () => {
-    return (
-      console.log(formData)
-    )
-  }
-  */
+  console.log(formData);
 
   return (
     <div>
