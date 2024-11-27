@@ -2,6 +2,7 @@ import { calcYearsWorked } from '../../utilities/calcYearsWorked';
 import Button from '../Button/Button';
 import './EmployeeCard.css';
 import { useState } from "react";
+import departments from '../../utilities/departments';
 
 
 const EmployeeCard = ({id, startDate, department, name, location, role, animal}) => {
@@ -20,7 +21,7 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
 
   return (
     <>
-      <div className="card">  
+      <div className={`card ${departments(details.department)}`}>  
         <div className="content">
           <p className="empName">
             {name} {promoRole && <span>⭐</span>}

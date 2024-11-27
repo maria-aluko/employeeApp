@@ -109,6 +109,16 @@
       "location": "Helsinki",
       "age": "33",
       "animal": "dog"
+    },
+    {
+      "id": 81,
+      "name": "Someone Else",
+      "role": "Admin",
+      "department": "ICT",
+      "startDate": "2021-10-29",
+      "location": "Helsinki",
+      "age": "22",
+      "animal": "horse"
     }
   ],
   "comments": [

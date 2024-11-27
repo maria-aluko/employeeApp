@@ -12,6 +12,18 @@
   line-height: 0.4rem;
 }
 
+.web {
+  border-top: 4px solid rgb(255, 123, 0);
+}
+
+.ict {
+  border-top: 4px solid rgb(81, 81, 255);
+}
+
+.backend { 
+  border-top: 4px solid #01c70f;
+}
+
 img {
   height: 100px;
   flex: 1;
