@@ -1,14 +1,30 @@
-import './EmployeeList.css'
+import { useEffect, useState } from 'react';
 import EmployeeCard from '../EmployeeCard/EmployeeCard';
-import employees from '../EmployeesData/EmployeesData';
+import './EmployeeList.css'
 
 const EmployeeList = () => {
+  const [persons, setPersons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/employees")
+    .then((response) => response.json())
+    .then((data) => {
+      setPersons(data);
+      setIsLoading(false);
+    })
+  }, []);
+
+
   return (
-    // use the spread operator to get all the object keys
     <div className="list">
-       {employees.map((employee) => {
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        persons.map((employee) => {
           return <EmployeeCard key = {employee.id} {...employee}/>
-            })}
+            })
+      )}
     </div>
   );
 };

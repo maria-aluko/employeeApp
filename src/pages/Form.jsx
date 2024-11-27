@@ -1,8 +1,11 @@
 import { useState } from "react";
+import axios from "axios";
 import employees from "../components/EmployeesData/EmployeesData";
 import './Form.css';
 
 const Form = ({id, name, role, department, startDate, location, age, animal}) => {
+  const [persons, setPersons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const generateId = () => {
     let id;
@@ -34,12 +37,35 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
     console.log(formData);
   };
 
+  const addEmployee = (newEmployee) => {
+    axios
+      .post("http://localhost:3001/employees", newEmployee)
+      .then((response) => {
+        setPersons((response.data));
+        setIsLoading(false);
+      })
+  }
+
+  const createEmployee = () => {
+    const newEmployee = {
+      id: generateId(),
+      name: formData.name,
+      role: formData.role,
+      department: formData.department,
+      startDate: formData.startDate,
+      location: formData.location,
+      age: formData.age,
+      animal: formData.animal,
+    };
+    addEmployee(newEmployee);
+  };
+
   return (
     <div>
       <h2>Add a New Employee</h2>
       <form
         onChange={handleChange}
-        onSubmit={handleSubmit}
+        onSubmit={createEmployee}
       >
         <label htmlFor="name">Full Name: </label>
         <input
