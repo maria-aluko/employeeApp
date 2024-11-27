@@ -4,11 +4,3 @@
   display: flex;
   place-items: center;
 }
-
-.loginBtn {
-  margin-top: 30px;
-}
-
-.logoutBtn {
-  margin-bottom: 20px;
-}

@@ -119,6 +119,16 @@
       "location": "Helsinki",
       "age": "22",
       "animal": "horse"
+    },
+    {
+      "id": 90,
+      "name": "Inimese Nimi",
+      "role": "Scrum Master",
+      "department": "Admin",
+      "startDate": "2012-12-12",
+      "location": "Tallinn",
+      "age": "35",
+      "animal": "dog"
     }
   ],
   "comments": [

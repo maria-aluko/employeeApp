@@ -20,7 +20,7 @@ input {
   font-size: 16px;
 }
 
-button {
+.formButton {
   width: 50%;
   margin: 30px auto 0 auto;
 }

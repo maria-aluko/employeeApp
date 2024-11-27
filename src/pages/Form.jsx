@@ -5,7 +5,7 @@ import './Form.css';
 
 const Form = ({id, name, role, department, startDate, location, age, animal}) => {
   const [persons, setPersons] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const generateId = () => {
     let id;
@@ -32,17 +32,12 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
     setFormData((prevState) => ({...prevState, [name]: value}));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
-
   const addEmployee = (newEmployee) => {
     axios
       .post("http://localhost:3001/employees", newEmployee)
       .then((response) => {
         setPersons((response.data));
-        setIsLoading(false);
+        setIsLoading(true);
       })
   }
 
@@ -63,7 +58,10 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
   return (
     <div>
       <h2>Add a New Employee</h2>
-      <form
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <form
         onChange={handleChange}
         onSubmit={createEmployee}
       >
@@ -115,8 +113,9 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
           type="text"
           placeholder="Dog"
         />
-        <button type="submit">Add New</button>
+        <button className="formButton" type="submit">Add New</button>
       </form>
+      ) };
     </div>
   )
 };
