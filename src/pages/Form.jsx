@@ -115,7 +115,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         />
         <button className="formButton" type="submit">Add New</button>
       </form>
-      ) };
+      )}
     </div>
   )
 };
