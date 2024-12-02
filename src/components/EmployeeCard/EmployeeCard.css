@@ -1,6 +1,6 @@
 .card {
   color: #162C42;
-  background-color: #eee;
+  background-color: rgb(238, 238, 238);
   padding: 10px;
   box-shadow: 0 0 5px #333;
   font-size: 1rem;
@@ -10,18 +10,19 @@
   border-radius: 5px;
   display: flex;
   line-height: 0.4rem;
+  border-left: 5px solid rgb(238, 238, 238);
 }
 
 .web {
-  border-top: 4px solid rgb(255, 123, 0);
+  border-left: 5px solid rgb(255, 123, 0);
 }
 
 .ict {
-  border-top: 4px solid rgb(81, 81, 255);
+  border-left: 5px solid rgb(81, 81, 255);
 }
 
 .backend { 
-  border-top: 4px solid #01c70f;
+  border-left: 5px solid #01c70f;
 }
 
 img {
