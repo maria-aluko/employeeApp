@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import './EmployeeCard.css';
 import { useState } from "react";
 import departments from '../../utilities/departments';
+import axios from 'axios';
 
 
 const EmployeeCard = ({id, startDate, department, name, location, role, animal}) => {
@@ -19,6 +20,15 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
     setDetails((prevState) => ({...prevState, [name]: value}));
   };
 
+  const saveChanges = async () => {
+    try {
+      await axios.put(`http://localhost:3001/employees/${id}`, details);
+      setEdit(false);
+    } catch (error) {
+      console.error("Error updating employee data:", error);
+    }
+  };
+
   return (
     <>
       <div className={`card ${departments(details.department)}`}>  
@@ -26,13 +36,27 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
           <p className="empName">
             {name} {promoRole && <span>⭐</span>}
           </p>
-          <div>{role} 
+          <div>
+            {edit ? (
+              <input 
+                name='role'
+                type='text'
+                value={details.role}
+                onChange={handleChange} />
+            ) : (
+              <p>{role} 
             {promoRole && <span> - Team Lead</span>}
+            </p>
+            )}
           </div>
           
           <div className='subtle'>
             {edit ? (
-              <input name='department' type='text' value={details.department} onChange={handleChange} />
+              <input 
+                name='department'
+                type='text'
+                value={details.department}
+                onChange={handleChange} />
             ) : (
               <p>Department: {details.department}</p>
             )}
@@ -59,7 +83,7 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
             text={promoRole ? "Demote" : "Promote"}
           />
           <Button
-            onClick={() => setEdit((prevState) => !prevState)}
+            onClick={() => (edit ? saveChanges() : setEdit(true))}
             text={edit ? "Save" : "Edit"}
           />
           <div>

@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Alice Johnson",
       "role": "React Teacher",
       "department": "ICT",
@@ -11,17 +11,13 @@
       "animal": "dog"
     },
     {
-      "id": 2,
-      "name": "Michael Smith",
-      "role": "Frontend Teacher",
       "department": "Web Dev",
-      "startDate": "2019-08-22",
-      "location": "San Francisco",
-      "age": 45,
-      "animal": "cat"
+      "location": "San Diego",
+      "role": "Frontend Teacher",
+      "id": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Rachel Kim",
       "role": "Node Teacher",
       "department": "ICT",
@@ -31,7 +27,7 @@
       "animal": "hamster"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "James Williams",
       "role": "UI Teacher",
       "department": "Web Dev",
@@ -41,7 +37,7 @@
       "animal": "mouse"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Linda Garcia",
       "role": "Databases Teacher",
       "department": "Admin",
@@ -51,7 +47,7 @@
       "animal": "dog"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Robert Brown",
       "role": "Backend Teacher",
       "department": "Backend",
@@ -61,7 +57,7 @@
       "animal": "cat"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Patricia Wilson",
       "role": "UI Teacher",
       "department": "Admin",
@@ -71,7 +67,7 @@
       "animal": "dog"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "John Miller",
       "role": "CSS Teacher",
       "department": "Web Dev",
@@ -81,7 +77,7 @@
       "animal": "turtle"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Karen Martinez",
       "role": "UI Teacher",
       "department": "Backend",
@@ -91,7 +87,7 @@
       "animal": "dog"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "David Lee",
       "role": "Node Teacher",
       "department": "ICT",
@@ -101,7 +97,7 @@
       "animal": "dog"
     },
     {
-      "id": 34,
+      "id": "34",
       "name": "Maria Aluko",
       "role": "Web Designer",
       "department": "ICT",
@@ -111,7 +107,7 @@
       "animal": "dog"
     },
     {
-      "id": 81,
+      "id": "81",
       "name": "Someone Else",
       "role": "Admin",
       "department": "ICT",
@@ -121,14 +117,10 @@
       "animal": "horse"
     },
     {
-      "id": 90,
-      "name": "Inimese Nimi",
-      "role": "Scrum Master",
       "department": "Admin",
-      "startDate": "2012-12-12",
-      "location": "Tallinn",
-      "age": "35",
-      "animal": "dog"
+      "location": "Tartu",
+      "role": "Scrum Master",
+      "id": "90"
     }
   ],
   "comments": [
