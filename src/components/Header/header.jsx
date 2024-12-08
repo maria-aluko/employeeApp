@@ -14,7 +14,6 @@ function Header() {
           <li><NavLink to='/new'>Add New</NavLink></li>
         </ul>
       </nav>
-
     </header>
   )
 }

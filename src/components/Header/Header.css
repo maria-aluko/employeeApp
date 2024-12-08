@@ -1,8 +1,8 @@
 header {
-  padding: 30px 50px;
+  padding: 30px;
   background-color: #162C42;
-  margin-bottom: 10px;
-  width: 100%;
+  width: 100vw;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -14,7 +14,7 @@ h1 {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 nav ul {

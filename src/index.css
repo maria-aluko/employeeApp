@@ -27,4 +27,5 @@ a:hover {
 body {
   margin: 0 auto;
   display: flex;
+  text-align: center;
 }
