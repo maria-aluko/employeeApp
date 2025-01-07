@@ -1,9 +1,11 @@
-const Button = ({onClick, type = 'button', text, className}) => {
+import styles from './Button.module.css';
+
+const Button = ({onClick, type = 'button', text, role='primary'}) => {
   return (
     <button 
       type={type}
       onClick={onClick}
-      className={className}
+      className={`${styles.btn} ${styles[role]}`}
     >
       {text}
     </button>

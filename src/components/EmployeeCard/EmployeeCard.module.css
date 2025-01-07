@@ -9,12 +9,12 @@
   text-align: center;
   border-radius: 5px;
   display: flex;
-  line-height: 0.5rem;
+  line-height: 0.7rem;
   border-left: 5px solid rgb(238, 238, 238);
 }
 
 .web {
-  border-left: 5px solid rgb(255, 123, 0);
+  border-left: 5px solid rgb(252, 99, 193);
 }
 
 .ict {
@@ -27,8 +27,12 @@
 
 img {
   height: 100px;
-  padding: 1rem;
-  margin-bottom: 1.8rem;
+  width: 100px;
+  margin-bottom: 1.2rem;
+}
+
+.align {
+  padding-top: 0.1rem;
 }
 
 .content {
@@ -38,26 +42,20 @@ img {
 }
 
 .secondContent {
-  flex: 1;
+  padding: 10px;
   text-align: right;
-}
-
-.seeMore {
-  background-color: #01c70f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .empName {
   font-size: 1.5rem;
 }
 
-.promotion {
-  height: 20px;
-}
-
 .promo {
   font-size: 0.7rem;
   font-style: italic;
-  font-weight: 100;
 }
 
 .subtle {
@@ -65,21 +63,9 @@ img {
   font-size: 0.9rem;
 }
 
-button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  background-color: #F7770F;
-  cursor: pointer;
-  font-weight: 500;
-}
-
-button:hover {
-  background-color: #ce5d00;
-}
-
 input {
-  margin-top: 10px;
-  width: 40px;
+  margin-top: 5px;
+  width: 50px;
 }
 
 .smallTxt {

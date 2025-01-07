@@ -1,11 +1,11 @@
 import { calcYearsWorked } from '../../utilities/calcYearsWorked';
 import Button from '../Button/Button';
-import './EmployeeCard.css';
+//import './EmployeeCard.css';
 import { useState } from "react";
 import departments from '../../utilities/departments';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import styles from './EmployeeCard.module.css';
 
 const EmployeeCard = ({id, startDate, department, name, location, role, animal, age}) => {
   const [promoRole, setPromoRole] = useState(false);
@@ -48,9 +48,9 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
 
   return (
     <>
-      <div className={`card ${departments(details.department)}`}>  
-        <div className="content">
-          <p className="empName">
+      <div className={`${styles.card} ${styles[departments(details.department)]}`}>  
+        <div className={styles.content}>
+          <p className={styles.empName}>
             {name} {promoRole && <span>⭐</span>}
           </p>
           <div>
@@ -67,7 +67,7 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
             )}
           </div>
           
-          <div className='subtle'>
+          <div className={styles.subtle}>
             {edit ? (
               <input 
                 name='department'
@@ -91,7 +91,6 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
                 {yearsWorked < 1 && <span> few months</span>}
                 {yearsWorked > 1 && <span> {yearsWorked} years</span>}
             </p>
-            <p>Animal: {animal}</p>
             </div>
           </div>
           
@@ -103,36 +102,33 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
             onClick={() => (edit ? saveChanges() : setEdit(true))}
             text={edit ? "Save" : "Edit"}
           />
-          <div>
-            {probation && (
-            <p className='promo'>
-              <span>🎉</span> Schedule probation review
-            </p>
-            )}
-          </div>
-          <div>
-            {anniversary && (
-            <p className='promo'>
-              <span>🎉</span> Schedule recognition meeting
-            </p>
-            )}
-          </div>
         </div>
-        <div className='secondContent'>
+        <div className={styles.secondContent}>
+          <div>
+            {probation ? (
+              <p className={styles.promo}>
+                <span>🎉</span> Probation
+              </p>
+            ) : anniversary ? (
+              <p className={styles.promo}>
+                <span>🎉</span> Recognition
+              </p>
+            ) : (
+              <p className={styles.align}></p>
+            )}
+          </div>
           <img
             src={`https://robohash.org/${id}?set=set5`}
             alt="Employee Picture" 
           />
-
           <Button 
             text={'See More'}
-            className={'seeMore'}
+            role={'secondary'}
             onClick={() => navigate(`/employees/${id}`)}
           />
-
           {loading && (
-            <div className='loadingDiv'>
-              <div className='spinner'></div>
+            <div className={styles.loadingDiv}>
+              <div className={styles.spinner}></div>
             </div>
           )}
         </div>

@@ -1,0 +1,25 @@
+.btn {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #fb760a;
+  cursor: pointer;
+  font-weight: 500;
+  box-shadow: none;
+  font-family: inherit;
+}
+
+.btn.primary {
+  background-color: var(--primary-button);
+}
+
+.btn.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn.secondary {
+  background-color: var(--secondary-button);
+}
+
+.btn.secondary:hover {
+  background-color: var(--secondary-hover);
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import EmployeeCard from '../EmployeeCard/EmployeeCard';
-import './EmployeeList.css'
+import styles from './EmployeeList.module.css'
 
 const EmployeeList = () => {
   const [persons, setPersons] = useState([]);
@@ -17,7 +17,7 @@ const EmployeeList = () => {
 
 
   return (
-    <div className="list">
+    <div className={styles.list}>
       {isLoading ? (
         <p>Loading...</p>
       ) : (
