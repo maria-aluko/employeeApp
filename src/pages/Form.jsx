@@ -7,6 +7,8 @@ import styles from './Form.module.css';
 const Form = ({id, name, role, department, startDate, location, age, animal, email, phone}) => {
   const [persons, setPersons] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const generateId = () => {
     let id;
@@ -17,7 +19,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
     return id;
   };
 
-  const [formData, setFormData] = useState({
+  const defaultFormData = {
     id: String(generateId()),
     name,
     role,
@@ -28,7 +30,9 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
     animal,
     email,
     phone,
-  });
+  };
+
+  const [formData, setFormData] = useState(defaultFormData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,11 +44,24 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
       .post("http://localhost:3001/employees", newEmployee)
       .then((response) => {
         setPersons((response.data));
-        setIsLoading(true);
+        setIsLoading(false);
+        setSuccessMessage('Employee added successfully!');
+
+        setTimeout(() => {
+          setSuccessMessage('');
+        }, 3000);
+
+        setFormData(defaultFormData);
       })
+      .catch((error) => {
+        setSuccessMessage('Failed to add employee. Try again.');
+        setTimeout(() => setSuccessMessage(''), 3000);
+        setIsLoading(false);
+      });
   }
 
-  const createEmployee = () => {
+  const createEmployee = (e) => {
+    e.preventDefault();
     const newEmployee = {
       id: String(generateId()),
       name: formData.name,
@@ -57,12 +74,22 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
       email: formData.email,
       phone: formData.phone
     };
+    setIsLoading(true);
     addEmployee(newEmployee);
   };
 
   return (
     <div>
       <h2>Add a New Employee</h2>
+      {successMessage && (
+        <div className={styles.successMessage}>
+          <p>{successMessage}</p>
+        </div>
+      )}
+      {errorMessage && (
+        <p className={styles.errorMessage}>{errorMessage}</p>
+      )}
+
       {isLoading ? (
         <p>Loading...</p>
       ) : (
@@ -77,6 +104,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
           value={formData.name}
           type="text"
           placeholder="John Doe"
+          required
         />
         <label htmlFor="role">Role: </label>
         <input
@@ -84,6 +112,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
           value={formData.role}
           type="text"
           placeholder="Web Designer"
+          required
         />
         <label htmlFor="department">Department: </label>
         <input
@@ -91,12 +120,14 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
           value={formData.department}
           type="text"
           placeholder="ICT"
+          required
         />
         <label htmlFor="startDate">Start of Employment: </label>
         <input
           name="startDate"
           value={formData.startDate}
           type="date"
+          required
         />
 
         <label htmlFor="email">Email: </label>
@@ -105,6 +136,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
           value={formData.email}
           type="text"
           placeholder="example@example.com"
+          required
         />
         <label htmlFor="phone">Phone number: </label>
         <input
