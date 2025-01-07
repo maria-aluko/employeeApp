@@ -7,7 +7,7 @@ const EmployeeList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/employees")
+    fetch("/api/mock-backend/data")
     .then((response) => response.json())
     .then((data) => {
       setPersons(data);
@@ -30,16 +30,3 @@ const EmployeeList = () => {
 };
 
 export default EmployeeList;
-
-/*
-{teachers.map((teacher) => {
-  return <EmployeeCard
-    name={teacher.name}
-    initRole={teacher.role}
-    department={teacher.department}
-    startDate={teacher.startDate}
-    location={teacher.location}
-    age={teacher.age}
-    animal={teacher.animal}
-    key={teacher.id}
-*/
