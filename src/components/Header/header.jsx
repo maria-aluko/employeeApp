@@ -1,9 +1,9 @@
 import { NavLink, Link } from "react-router-dom";
-import './Header.css'
+import styles from './Header.module.css'
 
 function Header() {
   return (
-    <header>
+    <div className={styles.header}>
       <nav>
         <Link to='/'>
           <h1>Employee Dashboard</h1>
@@ -14,7 +14,7 @@ function Header() {
           <li><NavLink to='/new'>Add New</NavLink></li>
         </ul>
       </nav>
-    </header>
+    </div>
   )
 }
 

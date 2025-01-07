@@ -1,45 +1,44 @@
-header {
+.header {
   padding: 30px;
   background-color: #162C42;
   width: 100vw;
   margin-bottom: 30px;
 }
 
-h1 {
+.header h1 {
   font-size: 2rem;
   color: white;
   margin: 0;
 }
 
-nav {
+.header nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-size: 1.1rem;
 }
 
-nav ul {
+.header nav a {
+  text-decoration: none;
+}
+
+.header nav ul {
   list-style: none; 
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-nav ul li {
+.header nav ul li {
   margin: 0;
   padding: 0 20px;
 }
 
-nav ul li a {
-  text-decoration: none;
+.header nav ul li a {
   color: white;
   transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.header nav ul li a:hover {
   color: #979595;
-}
-
-nav ul li a.active {
-  color: #979595;
-  text-transform: uppercase;
 }
