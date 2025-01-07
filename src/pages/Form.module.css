@@ -1,23 +1,18 @@
-form {
+.formContainer {
   display: flex;
   flex-direction: column;
   max-width: 400px;
   margin: 0 auto;
 }
 
-label, input {
+.formContainer label, .formContainer input {
   width: 100%;
   box-sizing: border-box;
 }
 
-input {
+.formContainer input {
   padding: 8px;
   font-size: 16px;
   margin: 0 0 16px 0;
   height: 35px;
-}
-
-.formButton {
-  width: 50%;
-  margin: 30px auto 0 auto;
 }

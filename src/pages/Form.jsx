@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 import employees from "../components/EmployeesData/EmployeesData";
-import './Form.css';
+import Button from "../components/Button/Button";
+import styles from './Form.module.css';
 
-const Form = ({id, name, role, department, startDate, location, age, animal}) => {
+const Form = ({id, name, role, department, startDate, location, age, animal, email, phone}) => {
   const [persons, setPersons] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,6 +26,8 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
     location,
     age,
     animal,
+    email,
+    phone,
   });
 
   const handleChange = (e) => {
@@ -51,6 +54,8 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
       location: formData.location,
       age: formData.age,
       animal: formData.animal,
+      email: formData.email,
+      phone: formData.phone
     };
     addEmployee(newEmployee);
   };
@@ -64,6 +69,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
         <form
         onChange={handleChange}
         onSubmit={createEmployee}
+        className={styles.formContainer}
       >
         <label htmlFor="name">Full Name: </label>
         <input
@@ -92,6 +98,21 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
           value={formData.startDate}
           type="date"
         />
+
+        <label htmlFor="email">Email: </label>
+        <input
+          name="email"
+          value={formData.email}
+          type="text"
+          placeholder="example@example.com"
+        />
+        <label htmlFor="phone">Phone number: </label>
+        <input
+          name="phone"
+          value={formData.phone}
+          type="text"
+          placeholder="Enter in format +358 123 456 789"
+        />
         <label htmlFor="location">Based in: </label>
         <input
           name="location"
@@ -113,7 +134,12 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
           type="text"
           placeholder="Dog"
         />
-        <button className="formButton" type="submit">Add New</button>
+        <Button 
+          role='formButton'
+          text={'Add Employee'}
+          type='submit'
+        >
+          Add New </Button>
       </form>
       )}
     </div>

@@ -23,3 +23,8 @@
 .btn.secondary:hover {
   background-color: var(--secondary-hover);
 }
+
+.btn.formButton {
+  width: 50%;
+  margin: 30px auto 0 auto;
+}

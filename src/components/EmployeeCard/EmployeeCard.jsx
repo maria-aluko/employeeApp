@@ -87,7 +87,7 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
             </div>
             
             <div className='smallTxt'>
-            <p>Been here for
+            <p>Has worked
                 {yearsWorked < 1 && <span> few months</span>}
                 {yearsWorked > 1 && <span> {yearsWorked} years</span>}
             </p>

@@ -3,32 +3,38 @@
     {
       "id": "1",
       "name": "Alice Johnson",
-      "role": "React Teacher",
+      "role": "React Dev",
       "department": "ICT",
       "startDate": "2018-09-01",
       "location": "New York",
       "age": 33,
-      "animal": "dog"
+      "animal": "dog",
+      "phone": "+358 40 123 4567",
+      "email": "alice.johnson@example.fi"
     },
     {
       "id": "3",
       "startDate": "2024-01-10",
       "name": "Rachel Kim",
       "animal": "hamster",
-      "role": "Node Teacher",
+      "role": "Node Master",
       "department": "ICT",
       "location": "London",
-      "age": 41
+      "age": 41,
+      "phone": "+358 44 234 5678",
+      "email": "rachel.kim@outlook.fi"
     },
     {
       "id": "4",
       "name": "James Williams",
-      "role": "UI Teacher",
+      "role": "UI Designer",
       "department": "Web Dev",
       "startDate": "2009-11-02",
-      "location": "Austin",
+      "location": "Tallinn",
       "age": 29,
-      "animal": "mouse"
+      "animal": "mouse",
+      "phone": "+358 50 345 6789",
+      "email": "james.williams@gmail.fi"
     },
     {
       "id": "5",
@@ -38,47 +44,57 @@
       "startDate": "2008-05-15",
       "location": "Denver",
       "age": 39,
-      "animal": "dog"
+      "animal": "dog",
+      "phone": "+358 45 456 7890",
+      "email": "linda.garcia@live.fi"
     },
     {
       "id": "6",
       "name": "Robert Brown",
-      "role": "Backend Teacher",
+      "role": "Backend Dev",
       "department": "Backend",
       "startDate": "2018-03-20",
       "location": "New York",
       "age": 35,
-      "animal": "cat"
+      "animal": "cat",
+      "phone": "+358 40 567 8901",
+      "email": "robert.brown@yahoo.fi"
     },
     {
       "id": "7",
       "name": "Patricia Wilson",
-      "role": "UI Teacher",
+      "role": "UI Designer",
       "department": "Admin",
       "startDate": "2024-06-01",
       "location": "Los Angeles",
       "age": 40,
-      "animal": "dog"
+      "animal": "dog",
+      "phone": "+358 41 678 9012",
+      "email": "patricia.wilson@icloud.fi"
     },
     {
       "id": "8",
       "name": "John Miller",
-      "role": "CSS Teacher",
+      "role": "CSS Head",
       "department": "Web Dev",
       "startDate": "2014-09-05",
       "location": "Seattle",
       "age": 43,
-      "animal": "turtle"
+      "animal": "turtle",
+      "phone": "+358 42 789 0123",
+      "email": "john.miller@elisanet.fi"
     },
     {
       "id": "9",
       "startDate": "2015-04-25",
       "name": "Karen Martinez",
       "animal": "dog",
-      "role": "UI Teacher",
+      "role": "UI Designer",
       "department": "Backend",
       "location": "Helsinki",
-      "age": 36
+      "age": 36,
+      "phone": "+358 43 890 1234",
+      "email": "karen.martinez@webmail.fi"
     },
     {
       "id": "96",
@@ -87,8 +103,10 @@
       "animal": "cat",
       "role": "Web Designer",
       "department": "ICT",
-      "location": "Helsinki",
-      "age": "33"
+      "location": "Pasila",
+      "age": "33",
+      "phone": "+358 44 901 2345",
+      "email": "john.doe@gmail.com"
     },
     {
       "id": "44",
@@ -98,7 +116,9 @@
       "role": "Web Designer",
       "department": "ICT",
       "location": "Vantaa",
-      "age": "34"
+      "age": "34",
+      "phone": "+358 40 123 9876",
+      "email": "maria.aluko@post.fi"
     }
   ]
 }

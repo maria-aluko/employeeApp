@@ -6,16 +6,32 @@
 }
 
 .SPcard {
-  width: 600px;
+  width: 500px;
   color: #162C42;
   background-color: rgb(238, 238, 238);
-  padding: 10px;
+  padding: 10px 20px;
   box-shadow: 0 0 5px #333;
   font-size: 1rem;
   margin: 10px;
-  text-align: center;
+  text-align: left;
   border-radius: 5px;
   display: flex;
-  line-height: 0.5rem;
+  line-height: 0.7rem;
   border-left: 5px solid rgb(238, 238, 238);
+}
+
+.SPinfo {
+  flex: 3;
+}
+
+.section {
+  padding-top: 0.1rem;
+}
+
+.SPsecond {
+  flex: 1;
+}
+
+.empName {
+  font-size: 1.5em;
 }
