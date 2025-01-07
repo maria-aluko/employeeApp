@@ -7,7 +7,7 @@ const EmployeeList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/employees")
+    fetch("https://hr-app-maria-aluko.netlify.app/employees")
     .then((response) => response.json())
     .then((data) => {
       setPersons(data);
