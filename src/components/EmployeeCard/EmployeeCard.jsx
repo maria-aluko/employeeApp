@@ -4,12 +4,15 @@ import './EmployeeCard.css';
 import { useState } from "react";
 import departments from '../../utilities/departments';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
-const EmployeeCard = ({id, startDate, department, name, location, role, animal}) => {
+const EmployeeCard = ({id, startDate, department, name, location, role, animal, age}) => {
   const [promoRole, setPromoRole] = useState(false);
   const [edit, setEdit] = useState(false);
-  const [details, setDetails] = useState({department, location, role})
+  const [details, setDetails] = useState({name, department, location, role, id, startDate, animal, age});
+  const [loading, setLoading] = useState(false); 
+  const navigate = useNavigate();
 
   const yearsWorked = calcYearsWorked(startDate);
   const probation = yearsWorked < 0.5;
@@ -22,10 +25,24 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
 
   const saveChanges = async () => {
     try {
-      await axios.put(`http://localhost:3001/employees/${id}`, details);
+      setLoading(true);
+      const updatedEmployee = {
+        id: details.id,
+        startDate: details.startDate,
+        name: details.name,
+        animal: details.animal,
+        role: details.role,
+        department: details.department,
+        location: details.location,
+        age: details.age,
+      };
+
+      await axios.patch(`http://localhost:3001/employees/${id}`, updatedEmployee);
       setEdit(false);
+      setLoading(false);
     } catch (error) {
       console.error("Error updating employee data:", error);
+      setLoading(false);
     }
   };
 
@@ -101,11 +118,23 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal})
             )}
           </div>
         </div>
-        <div>
-          <img 
+        <div className='secondContent'>
+          <img
             src={`https://robohash.org/${id}?set=set5`}
             alt="Employee Picture" 
           />
+
+          <Button 
+            text={'See More'}
+            className={'seeMore'}
+            onClick={() => navigate(`/employees/${id}`)}
+          />
+
+          {loading && (
+            <div className='loadingDiv'>
+              <div className='spinner'></div>
+            </div>
+          )}
         </div>
       </div>
     </>

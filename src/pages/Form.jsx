@@ -17,7 +17,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
   };
 
   const [formData, setFormData] = useState({
-    id: generateId(),
+    id: String(generateId()),
     name,
     role,
     department,
@@ -43,7 +43,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal}) =>
 
   const createEmployee = () => {
     const newEmployee = {
-      id: generateId(),
+      id: String(generateId()),
       name: formData.name,
       role: formData.role,
       department: formData.department,

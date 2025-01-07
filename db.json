@@ -11,20 +11,14 @@
       "animal": "dog"
     },
     {
-      "department": "Web Dev",
-      "location": "San Diego",
-      "role": "Frontend Teacher",
-      "id": "2"
-    },
-    {
       "id": "3",
+      "startDate": "2024-01-10",
       "name": "Rachel Kim",
+      "animal": "hamster",
       "role": "Node Teacher",
       "department": "ICT",
-      "startDate": "2024-01-10",
-      "location": "Chicago",
-      "age": 41,
-      "animal": "hamster"
+      "location": "London",
+      "age": 41
     },
     {
       "id": "4",
@@ -39,7 +33,7 @@
     {
       "id": "5",
       "name": "Linda Garcia",
-      "role": "Databases Teacher",
+      "role": "DB Teacher",
       "department": "Admin",
       "startDate": "2008-05-15",
       "location": "Denver",
@@ -78,64 +72,33 @@
     },
     {
       "id": "9",
+      "startDate": "2015-04-25",
       "name": "Karen Martinez",
+      "animal": "dog",
       "role": "UI Teacher",
       "department": "Backend",
-      "startDate": "2015-04-25",
-      "location": "Miami",
-      "age": 36,
-      "animal": "dog"
+      "location": "Helsinki",
+      "age": 36
     },
     {
-      "id": "10",
-      "name": "David Lee",
-      "role": "Node Teacher",
-      "department": "ICT",
-      "startDate": "2024-07-18",
-      "location": "Boston",
-      "age": 27,
-      "animal": "dog"
-    },
-    {
-      "id": "34",
-      "name": "Maria Aluko",
+      "id": "96",
+      "startDate": "2020-12-12",
+      "name": "John Doe",
+      "animal": "cat",
       "role": "Web Designer",
       "department": "ICT",
-      "startDate": "2020-07-23",
       "location": "Helsinki",
-      "age": "33",
-      "animal": "dog"
+      "age": "33"
     },
     {
-      "id": "81",
-      "name": "Someone Else",
-      "role": "Admin",
+      "id": "44",
+      "startDate": "2024-08-01",
+      "name": "Maria Aluko",
+      "animal": "Dog",
+      "role": "Web Designer",
       "department": "ICT",
-      "startDate": "2021-10-29",
-      "location": "Helsinki",
-      "age": "22",
-      "animal": "horse"
-    },
-    {
-      "department": "Admin",
-      "location": "Tartu",
-      "role": "Scrum Master",
-      "id": "90"
+      "location": "Vantaa",
+      "age": "34"
     }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
