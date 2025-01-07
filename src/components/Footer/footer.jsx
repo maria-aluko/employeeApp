@@ -1,9 +1,9 @@
-import './footer.css';
+import './Footer.css';
 
 function Footer() {
   return (
     <footer>
-      <p>&copy; Copyright 2024 Maria Aluko</p>
+      <p>&copy; Copyright 2024 Maria Aluko </p>
     </footer>
   )
 }
