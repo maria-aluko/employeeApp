@@ -37,7 +37,7 @@ const EmployeeCard = ({id, startDate, department, name, location, role, animal, 
         age: details.age,
       };
 
-      await axios.patch(`http://localhost:3001/employees/${id}`, updatedEmployee);
+      await axios.patch(`https://employeeapp-data.onrender.com/employees/${id}`, updatedEmployee);
       setEdit(false);
       setLoading(false);
     } catch (error) {

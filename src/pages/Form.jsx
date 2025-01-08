@@ -41,7 +41,7 @@ const Form = ({id, name, role, department, startDate, location, age, animal, ema
 
   const addEmployee = (newEmployee) => {
     axios
-      .post("http://localhost:3001/employees", newEmployee)
+      .post("https://employeeapp-data.onrender.com/employees", newEmployee)
       .then((response) => {
         setPersons((response.data));
         setIsLoading(false);
