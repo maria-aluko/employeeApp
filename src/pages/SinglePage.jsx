@@ -14,7 +14,7 @@ const SinglePage = () => {
     fetch('https://employeeapp-data.onrender.com/employees')
       .then((response) => response.json())
       .then((data) => {
-        const foundEmp = data.employees.find((e) => e.id === id);
+        const foundEmp = data.find((e) => e.id === id);
         setEmployee(foundEmp);
       })
       .catch((error) => {
