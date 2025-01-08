@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       { path: '/employees', element: <List /> },
       { path: '/employees/:id', element: <SinglePage /> },
       { path: '/new', element: <Form /> },
-      { path: '/error', element: <ErrorPage /> },
+      { path: '*', element: <ErrorPage /> },
     ],
   },  
 ],
