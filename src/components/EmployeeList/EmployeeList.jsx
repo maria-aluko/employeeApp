@@ -7,7 +7,7 @@ const EmployeeList = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://hr-app-aluko.vercel.app/api/mock-backend/employees")
+    fetch("https://employeeapp-data.onrender.com/employees")
     .then((response) => response.json())
     .then((data) => {
       setPersons(data);
